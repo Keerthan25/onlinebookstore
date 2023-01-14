@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: bookapp
-        image: amazoncorretto
+        image: bookapp
         ports:
-        - containerPort: 8083
+        - containerPort: 8080
         
         ---
         
@@ -28,7 +28,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - targetPort: 8083
+  - targetPort: 8080
     port: 8080
     nodePort: 31000
   selector:
