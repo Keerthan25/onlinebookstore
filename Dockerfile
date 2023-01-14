@@ -1,6 +1,7 @@
-FROM ubuntu 
-COPY . /app
+FROM maven:amazoncorretto as build
 WORKDIR /app
-RUN apt update && apt install maven -y
-EXPOSE 8083
-CMD mvn clean install
+COPY . .
+RUN mvn clean install
+
+FROM adhig93/tomcat-conf
+COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/
