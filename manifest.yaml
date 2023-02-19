@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bookapp
-        image: bookapp
+        image: keerthan25 / useraccount
         ports:
         - containerPort: 8080
         
@@ -34,3 +34,5 @@ spec:
   selector:
     app: bookapp 
         
+ 
+ 
